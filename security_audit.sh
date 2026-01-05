@@ -121,20 +121,20 @@ else
 fi
 
 # 10. FAILED LOGIN ATTEMPTS
-echo -e "\n${GREEN}[10] FAILED LOGIN ATTEMPTS${NC}"
+echo -e "\n${GREEN}[30] FAILED LOGIN ATTEMPTS${NC}"
 if [ -f /var/log/auth.log ]; then
     FAILED_LOGINS=$(grep "Failed password" /var/log/auth.log 2>/dev/null | wc -l)
     echo "Recent failed login attempts: $FAILED_LOGINS"
     if [ $FAILED_LOGINS -gt 0 ]; then
-        echo "Last 10 failed attempts:"
-        grep "Failed password" /var/log/auth.log 2>/dev/null | tail -10
+        echo "Last 30 failed attempts:"
+        grep "Failed password" /var/log/auth.log 2>/dev/null | tail -30
     fi
 elif [ -f /var/log/secure ]; then
     FAILED_LOGINS=$(grep "Failed password" /var/log/secure 2>/dev/null | wc -l)
     echo "Recent failed login attempts: $FAILED_LOGINS"
     if [ $FAILED_LOGINS -gt 0 ]; then
-        echo "Last 10 failed attempts:"
-        grep "Failed password" /var/log/secure 2>/dev/null | tail -10
+        echo "Last 30 failed attempts:"
+        grep "Failed password" /var/log/secure 2>/dev/null | tail -30
     fi
 fi
 
