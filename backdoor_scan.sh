@@ -335,7 +335,7 @@ echo ""
 
 if [ $ALERT_COUNT -gt 3 ]; then
     echo -e "${RED}========================================${NC}"
-    echo -e "${RED}  ⚠️  HIGH RISK - INVESTIGATE IMMEDIATELY${NC}"
+    echo -e "${RED}  HIGH RISK - INVESTIGATE IMMEDIATELY${NC}"
     echo -e "${RED}========================================${NC}"
     echo "Multiple security alerts detected!"
     echo "Consider isolating this system and conducting a forensic analysis."
